@@ -1,5 +1,13 @@
 ja:
   activerecord:
     models:
-
+      user: ユーザー
+      post: 投稿
     attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+      post:
+        title: タイトル
+        description: 説明
+        url: URL
