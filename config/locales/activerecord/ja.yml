@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       post: 投稿
+      tag: タグ
     attributes:
       user:
         email: メールアドレス
@@ -11,3 +12,5 @@ ja:
         title: タイトル
         description: 説明
         url: URL
+      tag:
+        name: タグ名
