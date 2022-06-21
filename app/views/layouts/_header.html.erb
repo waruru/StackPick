@@ -1,4 +1,4 @@
-<header class="flex justify-between items-center px-4 md:px-8 py-3 md:py-6 border-b-2 shadow-lg">
+<header class="flex justify-between items-center px-4 md:px-8 py-3 md:py-6 border-b-2 shadow-md">
   <!-- logo - start -->
   <a href="/" class="inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo">
     <svg viewBox="98.79 -12.639 500 500" width="50" height="50">
@@ -12,12 +12,12 @@
 
   <!-- nav - start -->
   <nav class="hidden lg:flex items-center gap-12">
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Home</a>
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Features</a>
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Pricing</a>
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">About</a>
-    <a href="#" class="inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3">Sign in</a>
-    <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Sign up</a>
+    <a href="#" class="header-nav-item">Home</a>
+    <a href="#" class="header-nav-item">Features</a>
+    <a href="#" class="header-nav-item">Pricing</a>
+    <a href="#" class="header-nav-item">About</a>
+    <%= link_to 'Sign in', new_user_session_path, class: "inline-block focus-visible:ring ring-indigo-300 text-gray-500 hover:text-indigo-500 active:text-indigo-600 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-3" %>
+    <%= link_to 'Sign up', new_user_registration_path, class: "inline-block bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
   </nav>
   <!-- nav - end -->
 
