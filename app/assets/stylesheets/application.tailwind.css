@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* ヘッダー関連 */
+  .header-nav-item {
+    @apply text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100;
+  }
+}
