@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.page(params[:page])
+    @search = Post.ransack(params[:q])
+    @posts = @search.result.page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
