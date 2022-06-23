@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_21_004655) do
     t.string "title", null: false
     t.text "description"
     t.text "url", null: false
+    t.text "ogp_url"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
