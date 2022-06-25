@@ -11,7 +11,7 @@ class Post < ApplicationRecord
       page = Mechanize.new.get(self.url)
       url = page.at('meta[property="og:image"]')[:content]
     rescue => e
-      url = ""
+      url = "no-image.png"
     end
     self.ogp_url = url
   end
