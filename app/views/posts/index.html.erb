@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div class="mt-6 px-4">
+<div class="mt-6">
   <div class="grid grid-cols-2 mt-4">
     <div class="mt-auto flex gap-3">
       <p class="font-bold">並び順</p>
@@ -38,19 +38,18 @@
 
   <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
     <% @posts.each do |post| %>
-      <div class="border border-gray-400 shadow-lg">
-        <div>
-          <p><%= post.title %></p>
-        </div>
+      <div class="rounded-xl border border-gray-400 shadow-lg">
+        <%= link_to post do %>
+          <div class="px-2 py-1 rounded-t-xl bg-green-500 border-b">
+            <p><%= post.title %></p>
+          </div>
 
-        <div class="h-40 items-center">
-          <% if post.ogp_url.present? %>
-            <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
-          <% end %>
-        </div>
-        <p>
-          <%= link_to "Show this post", post %>
-        </p>
+          <div class="h-40 mb-1 items-center">
+            <% if post.ogp_url.present? %>
+              <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
