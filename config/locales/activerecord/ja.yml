@@ -12,5 +12,7 @@ ja:
         title: タイトル
         description: 説明
         url: URL
+        created_at: 投稿日
+        updated_at: 最終更新日
       tag:
         name: タグ名
