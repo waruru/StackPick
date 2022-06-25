@@ -27,6 +27,8 @@
     <div class="mt-auto flex gap-3">
       <p class="font-bold">並び順</p>
       <%= sort_link @search, :title, class: "underline" %>
+      <%= sort_link @search, :created_at, class: "underline" %>
+      <%= sort_link @search, :updated_at, class: "underline" %>
     </div>
 
     <div class="flex justify-end">
@@ -43,7 +45,7 @@
 
         <div class="h-40 items-center">
           <% if post.ogp_url.present? %>
-            <%= image_tag post.ogp_url, size: "300x200" %>
+            <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
           <% end %>
         </div>
         <p>
