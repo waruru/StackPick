@@ -23,38 +23,40 @@
 </div>
 
 <div class="mt-6">
-  <div class="grid grid-cols-2 mt-4">
-    <div class="mt-auto flex gap-3">
-      <p class="font-bold">並び順</p>
-      <%= sort_link @search, :title, class: "underline" %>
-      <%= sort_link @search, :created_at, class: "underline" %>
-      <%= sort_link @search, :updated_at, class: "underline" %>
-    </div>
-
-    <div class="flex justify-end">
-      <%= link_to "New post", new_post_path, class: "px-3 py-1 rounded bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white" %>
-    </div>
-  </div>
-
-  <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
-    <% @posts.each do |post| %>
-      <div class="rounded-xl border border-gray-400 shadow-lg">
-        <%= link_to post do %>
-          <div class="px-2 py-1 rounded-t-xl bg-green-500 border-b">
-            <p><%= post.title %></p>
-          </div>
-
-          <div class="h-40 mb-1 items-center">
-            <% if post.ogp_url.present? %>
-              <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
-            <% end %>
-          </div>
-        <% end %>
+  <%= turbo_frame_tag 'posts-list' do %>
+    <div class="grid grid-cols-2 mt-4">
+      <div class="mt-auto flex gap-3">
+        <p class="font-bold">並び順</p>
+        <%= sort_link @search, :title, class: "underline" %>
+        <%= sort_link @search, :created_at, class: "underline" %>
+        <%= sort_link @search, :updated_at, class: "underline" %>
       </div>
-    <% end %>
-  </div>
 
-  <div class="mt-4 flex justify-center">
-    <%= paginate @posts %>
-  </div>
+      <div class="flex justify-end">
+        <%= link_to "New post", new_post_path, class: "px-3 py-1 rounded bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white" %>
+      </div>
+    </div>
+
+    <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
+      <% @posts.each do |post| %>
+        <div class="rounded-xl border border-gray-400 shadow-lg">
+          <%= link_to post do %>
+            <div class="px-2 py-1 rounded-t-xl bg-green-500 border-b">
+              <p><%= post.title %></p>
+            </div>
+
+            <div class="h-40 mb-1 items-center">
+              <% if post.ogp_url.present? %>
+                <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="mt-4 flex justify-center">
+      <%= paginate @posts %>
+    </div>
+  <% end %>
 </div>
