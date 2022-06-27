@@ -40,7 +40,7 @@
     <div id="posts" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
       <% @posts.each do |post| %>
         <div class="rounded-xl border border-gray-400 shadow-lg">
-          <%= link_to post do %>
+          <%= link_to post, data: { turbo: false } do %>
             <div class="px-2 py-1 rounded-t-xl bg-green-500 border-b">
               <p><%= post.title %></p>
             </div>
