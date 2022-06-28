@@ -1,6 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-2 md:mt-4 lg:mt-8">
+  <div class="col-span-2">
+    <div>
+      <h3 class="px-2 pb-1 text-4xl font-bold border-b-4 border-gray-400 inline-block"><%= @post.title %></h3>
+    </div>
 
-<%= render @post %>
+    <div class="mt-4 lg:mt-6 bg-slate-400">
+      <%= image_tag @post.ogp_url, class:"mx-auto" %>
+    </div>
+
+    <div class="mt-2 lg:mt-4">
+      <strong class="block pl-4 border-b-2">説明</strong>
+      <p><%= @post.description %></p>
+    </div>
+  </div>
+
+  <div class="invisible lg:visible col-span-1 px-6 border-l-4">
+    <div class="flex flex-col overflow-y-auto h-screen gap-4">
+      <% @posts.each do |post| %>
+        <%= render post %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
