@@ -1,9 +1,7 @@
-<h1>New post</h1>
+<h3 class="inline-block mt-4 pl-2 pr-6 border-b-2 border-gray-400 text-2xl font-bold">投稿</h3>
 
 <%= render "form", post: @post %>
 
-<br>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
+<div class="mt-2 text-center lg:text-end">
+  <%= link_to "キャンセル", posts_path %>
 </div>
