@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-    @posts = Post.all
+    @posts = Post.all.order(updated_at: :desc).limit(20)
   end
 
   # GET /posts/new
