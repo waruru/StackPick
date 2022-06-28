@@ -4,7 +4,7 @@
       <p><%= post.title %></p>
     </div>
 
-    <div class="h-40">
+    <div class="h-40 flex items-center">
       <% if post.ogp_url.present? %>
         <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
       <% end %>
