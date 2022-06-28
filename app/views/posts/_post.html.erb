@@ -1,22 +1,13 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+<div id="<%= dom_id post %>" class="rounded-xl border border-gray-400 shadow-lg">
+  <%= link_to post, data: { turbo: false } do %>
+    <div class="px-2 py-1 rounded-t-xl bg-green-500 border-b">
+      <p><%= post.title %></p>
+    </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= post.description %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= post.url %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
+    <div class="h-40">
+      <% if post.ogp_url.present? %>
+        <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
