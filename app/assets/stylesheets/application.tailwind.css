@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer components {
+  /* 全体共有 */
+  .btn-submit {
+    @apply px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white;
+  }
+
+  .form-text-field {
+    @apply w-full p-1 rounded border border-gray-300;
+  }
+
   /* ヘッダー関連 */
   .header-nav-item {
     @apply text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100;
