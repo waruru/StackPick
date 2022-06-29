@@ -5,10 +5,14 @@ class Post < ApplicationRecord
 
   before_save :set_ogp_url
 
+  validates :title, presence: true
+
   private
   def set_ogp_url
     begin
-      page = Mechanize.new.get(self.url)
+      agent = Mechanize.new
+      agent.set_proxy('http://wwwproxy.kanazawa-it.ac.jp', 8080)
+      page = agent.get(self.url)
       url = page.at('meta[property="og:image"]')[:content]
     rescue => e
       url = "no-image.png"
