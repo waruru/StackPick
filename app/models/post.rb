@@ -11,7 +11,6 @@ class Post < ApplicationRecord
   def set_ogp_url
     begin
       agent = Mechanize.new
-      agent.set_proxy('http://wwwproxy.kanazawa-it.ac.jp', 8080)
       page = agent.get(self.url)
       url = page.at('meta[property="og:image"]')[:content]
     rescue => e
