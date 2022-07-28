@@ -8,6 +8,7 @@ ja:
       user:
         email: メールアドレス
         password: パスワード
+        remember_me: ログインを保持
       post:
         title: タイトル
         description: 説明
