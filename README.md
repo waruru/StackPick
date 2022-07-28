@@ -25,4 +25,10 @@ access to `localhost:3000`
 
 * Deployment instructions
 
-* ...
+
+## デプロイ先
+* Heroku
+
+* テストユーザー: `test@example.com`
+
+* パスワード: `password`
