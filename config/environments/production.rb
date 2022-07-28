@@ -28,7 +28,6 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   config.assets.initialize_on_precompile=false
-  config.assets.js_compressor = :uglifier
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
