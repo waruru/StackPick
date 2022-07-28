@@ -12,13 +12,39 @@
   <% end %>
 
   <div>
-    <%= form.label :url, class: "block" %>
-    <%= form.text_field :url, class: "form-text-field" %>
-  </div>
-
-  <div>
     <%= form.label :title, class: "block" %>
     <%= form.text_field :title, class: "form-text-field" %>
+  </div>
+
+  <!--
+  <div>
+    <p>タグ</p>
+    <div class="flex gap-2">
+      <% post.tags.each do |tag| %>
+        <%= render tag %>
+      <% end %>
+    </div>
+
+    <div class="inline-block">
+      <ul class="px-2 min-w-[10rem] bg-white border border-black">
+        <%= form.collection_check_boxes(:tag_ids, @tags, :id, :name, include_hidden: false) do |tag| %>
+          <li>
+            <%= tag.check_box %>
+            <%= tag.label %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%#= form.fields_for :tags do |tag| %>
+      <%#= tag.label :name %>
+      <%#= tag.text_field :name %>
+    <%# end %>
+  </div> -->
+
+  <div>
+    <%= form.label :url, class: "block" %>
+    <%= form.text_field :url, class: "form-text-field" %>
   </div>
 
   <div>

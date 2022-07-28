@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     root 'posts#index', as: "user_authenticated_root"
   end
   root 'top#index'
-
+  
   devise_for :users
   resources :posts
+  resources :tags
 end
