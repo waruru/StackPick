@@ -82,6 +82,7 @@ gem "devise"
 gem "oauth2", "~> 2.0.0"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth-google-oauth2"
+gem 'omniauth-twitter'
 
 # ページネーション
 gem "kaminari"
