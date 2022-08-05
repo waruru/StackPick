@@ -3,8 +3,11 @@ Rails.application.routes.draw do
     root 'posts#index', as: "user_authenticated_root"
   end
   root 'top#index'
-  
-  devise_for :users
+
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+
   resources :posts
   resources :tags
 end
