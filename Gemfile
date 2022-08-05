@@ -24,6 +24,9 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
+gem "tailwindcss-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -44,24 +47,6 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
-
-# Use Tailwind CSS
-gem "cssbundling-rails"
-
-# 日本語化
-gem "rails-i18n"
-
-# ログイン管理
-gem "devise"
-
-# ページネーション
-gem "kaminari"
-
-# 検索機能
-gem "ransack"
-
-# スクレイピング
-gem "mechanize"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -88,3 +73,19 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# 日本語化
+gem "rails-i18n"
+
+# ログイン
+gem "devise"
+gem "oauth2", "~> 2.0.0"
+gem "omniauth-rails_csrf_protection"
+gem "omniauth-google-oauth2"
+
+# ページネーション
+gem "kaminari"
+# 検索機能
+gem "ransack"
+# スクレイピング
+gem "mechanize"
