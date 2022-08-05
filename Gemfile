@@ -83,6 +83,7 @@ gem "oauth2", "~> 2.0.0"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth-google-oauth2"
 gem 'omniauth-twitter'
+gem 'omniauth-github'
 
 # ページネーション
 gem "kaminari"
