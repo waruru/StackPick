@@ -1,15 +1,9 @@
 ja:
   activerecord:
     models:
-      user: ユーザー
       post: 投稿
       tag: タグ
     attributes:
-      user:
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: パスワード確認
-        remember_me: ログインを保持
       post:
         title: タイトル
         description: 説明
