@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2, :twitter, :github]
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :tags, dependent: :destroy
 
   def self.from_omniauth(auth)
