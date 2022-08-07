@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @search = Post.includes(:likes).ransack(params[:q])
+    @search = Post.includes(:likes).pub.ransack(params[:q])
     @posts = @search.result.page(params[:page])
   end
 
