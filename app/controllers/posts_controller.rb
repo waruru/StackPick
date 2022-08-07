@@ -82,6 +82,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description, :url).merge(user_id: current_user.id)
+      params.require(:post).permit(:title, :description, :published, :url).merge(user_id: current_user.id)
     end
 end

@@ -27,12 +27,12 @@
 
     <div class="inline-block">
       <ul class="px-2 min-w-[10rem] bg-white border border-black">
-        <%= form.collection_check_boxes(:tag_ids, @tags, :id, :name, include_hidden: false) do |tag| %>
+        <%#= form.collection_check_boxes(:tag_ids, @tags, :id, :name, include_hidden: false) do |tag| %>
           <li>
             <%= tag.check_box %>
             <%= tag.label %>
           </li>
-        <% end %>
+        <%# end %>
       </ul>
     </div>
 
@@ -52,10 +52,14 @@
     <%= form.text_area :description, class: "form-text-field" %>
   </div>
 
+  <div>
+    <%= form.select :published, [["非公開", false], ["公開", true]], { selected: post.published } %>
+  </div>
+
   <div class="mt-2 text-center">
-    <% if controller.action_name.to_sym == :new or controller.action_name.to_sym == :create %>
-      <%= form.submit "投稿", class: "btn-submit w-full font-bold" %>
-    <% elsif controller.action_name.to_sym == :edit or controller.action_name.to_sym == :update %>
+    <% if post.new_record? %>
+      <%= form.submit "保存", class: "btn-submit w-full font-bold" %>
+    <% else %>
       <%= form.submit "更新", class: "btn-submit w-full font-bold" %>
     <% end %>
   </div>
