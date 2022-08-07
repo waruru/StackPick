@@ -8,6 +8,9 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
+  scope :pub, -> { where(public: true) }
+  scope :pte, -> { where(public: false) }
+
   private
   def set_ogp_url
     begin
