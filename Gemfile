@@ -87,6 +87,8 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 
+# ファイルアップロード
+gem 'carrierwave'
 # ページネーション
 gem "kaminari"
 # 検索機能
