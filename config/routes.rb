@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  get 'account', to: 'users#show', as: 'account'
+
   resources :posts do
     resources :likes, only: [:create, :destroy]
   end
