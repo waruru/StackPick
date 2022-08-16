@@ -1,0 +1,2 @@
+module Users::IconHelper
+end

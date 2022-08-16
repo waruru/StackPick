@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  namespace :users do
+    get 'icon/new'
+    patch 'icon/update'
+  end
+
   get 'account', to: 'users#show', as: 'account'
 
   resources :posts do
