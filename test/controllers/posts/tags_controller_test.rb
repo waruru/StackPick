@@ -16,11 +16,11 @@ class Posts::TagsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create posts_tag" do
-    assert_difference("Posts::Tag.count") do
+    assert_difference("Tag.count") do
       post posts_tags_url, params: { posts_tag: {  } }
     end
 
-    assert_redirected_to posts_tag_url(Posts::Tag.last)
+    assert_redirected_to posts_tag_url(Tag.last)
   end
 
   test "should show posts_tag" do
@@ -39,7 +39,7 @@ class Posts::TagsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy posts_tag" do
-    assert_difference("Posts::Tag.count", -1) do
+    assert_difference("Tag.count", -1) do
       delete posts_tag_url(@posts_tag)
     end
 

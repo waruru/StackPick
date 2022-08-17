@@ -3,7 +3,7 @@ class Posts::TagsController < ApplicationController
 
   # GET /posts/tags or /posts/tags.json
   def index
-    @posts_tags = Posts::Tag.all
+    @posts_tags = Tag.all
   end
 
   # GET /posts/tags/1 or /posts/tags/1.json
@@ -12,7 +12,7 @@ class Posts::TagsController < ApplicationController
 
   # GET /posts/tags/new
   def new
-    @posts_tag = Posts::Tag.new
+    @posts_tag = Tag.new
   end
 
   # GET /posts/tags/1/edit
@@ -21,7 +21,7 @@ class Posts::TagsController < ApplicationController
 
   # POST /posts/tags or /posts/tags.json
   def create
-    @posts_tag = Posts::Tag.new(posts_tag_params)
+    @posts_tag = Tag.new(posts_tag_params)
 
     respond_to do |format|
       if @posts_tag.save
@@ -60,7 +60,7 @@ class Posts::TagsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_posts_tag
-      @posts_tag = Posts::Tag.find(params[:id])
+      @posts_tag = Tag.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
