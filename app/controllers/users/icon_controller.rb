@@ -7,8 +7,10 @@ class Users::IconController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @user.update(icon_params)
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: "posts/post", locals: {post: @post}) }
-        format.html { redirect_to account_url(@user), notice: "Icon was successfully updated." }
+        format.turbo_stream { render layout: false, content_type: 'text/vnd.turbo-stream.html' }
+        format.html { redirect_to account_url, notice: "Icon was successfully updated." }
+      else
+        format.html { redirect_to account_url, alert: "Icon was not successfully updated." ,status: :unprocessable_entity }
       end
     end
   end
