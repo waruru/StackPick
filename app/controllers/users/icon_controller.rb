@@ -10,7 +10,7 @@ class Users::IconController < ApplicationController
         format.turbo_stream { render layout: false, content_type: 'text/vnd.turbo-stream.html' }
         format.html { redirect_to account_url, notice: "Icon was successfully updated." }
       else
-        format.html { redirect_to account_url, alert: "Icon was not successfully updated." ,status: :unprocessable_entity }
+        format.html { redirect_to account_url, alert: "Icon was not successfully updated." }
       end
     end
   end
