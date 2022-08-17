@@ -12,6 +12,7 @@
 
   <!-- nav - start -->
   <nav class="hidden lg:flex items-center gap-8">
+    <%= link_to "test", users_index_path %>
     <%= link_to "投稿一覧", posts_path, class: "header-nav-item" %>
     <a href="#" class="header-nav-item">タイムライン</a>
     <a href="#" class="header-nav-item">トレンド</a>
@@ -20,7 +21,7 @@
       <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete }, class: "px-8 py-3 rounded-lg text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-700 text-sm md:text-base font-semibold text-center transition duration-100" %>
       <%= link_to account_path do %>
         <div class="relative">
-          <%= image_tag current_user.icon.url, class: "shadow-xl rounded-full align-middle border-none w-10" %>
+          <%= image_tag current_user.icon.url, class: "shadow-xl rounded-full align-middle border-none w-10 h-10" %>
         </div>
       <% end %>
     <% else %>
