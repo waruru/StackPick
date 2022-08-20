@@ -16,7 +16,6 @@
     <%= form.text_field :title, class: "form-text-field" %>
   </div>
 
-  <!--
   <div>
     <p>タグ</p>
     <div class="flex gap-2">
@@ -24,7 +23,7 @@
         <%= render tag %>
       <% end %>
     </div>
-
+<!--
     <div class="inline-block">
       <ul class="px-2 min-w-[10rem] bg-white border border-black">
         <%#= form.collection_check_boxes(:tag_ids, @tags, :id, :name, include_hidden: false) do |tag| %>
@@ -39,8 +38,8 @@
     <%#= form.fields_for :tags do |tag| %>
       <%#= tag.label :name %>
       <%#= tag.text_field :name %>
-    <%# end %>
-  </div> -->
+    <%# end %> -->
+  </div>
 
   <div>
     <%= form.label :url, class: "block" %>
