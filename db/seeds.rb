@@ -21,15 +21,15 @@ unless User.find_by(email: "test@example.com").posts.exists?
   puts "Post is created"
 end
 
-# unless User.find_by(email: "test@example.com").tags.exists?
-#   user = User.find_by(email: "test@example.com")
-#   tags = [
-#     {name: "アニメ", user: user},
-#     {name: "ドラマ", user: user},
-#     {name: "映画", user: user},
-#     {name: "技術記事", user: user},
-#     {name: "Qiita", user: user}
-#   ]
-#   Tag.create(tags)
-#   puts "Tag is created"
-# end
+unless User.find_by(email: "test@example.com").tags.exists?
+  user = User.find_by(email: "test@example.com")
+  tags = [
+    {name: "アニメ", user: user},
+    {name: "ドラマ", user: user},
+    {name: "映画", user: user},
+    {name: "技術記事", user: user},
+    {name: "Qiita", user: user}
+  ]
+  user.posts.first.tags << Tag.create(tags)
+  puts "Tag is created"
+end
