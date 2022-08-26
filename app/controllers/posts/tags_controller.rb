@@ -12,7 +12,7 @@ class Posts::TagsController < ApplicationController
 
   # GET /posts/tags/new
   def new
-    @posts_tag = Tag.new
+    @tag = Tag.new
   end
 
   # GET /posts/tags/1/edit

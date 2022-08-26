@@ -1,10 +1,10 @@
-<%= form_with(model: posts_tag, class: "contents") do |form| %>
-  <% if posts_tag.errors.any? %>
+<%= form_with(model: tag, url: new_posts_tag_path, class: "contents") do |form| %>
+  <% if tag.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(posts_tag.errors.count, "error") %> prohibited this posts_tag from being saved:</h2>
 
       <ul>
-        <% posts_tag.errors.each do |error| %>
+        <% tag.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
