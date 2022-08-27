@@ -23,6 +23,11 @@
         <%= render tag %>
       <% end %>
     </div>
+
+    <%= turbo_frame_tag "new_tag" do %>
+      <%= link_to "追加", new_posts_tag_path %>
+    <% end %>
+
 <!--
     <div class="inline-block">
       <ul class="px-2 min-w-[10rem] bg-white border border-black">
