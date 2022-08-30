@@ -1,10 +1,11 @@
 <%= turbo_frame_tag "modal" do %>
-  <div class="fixed z-50 top-0 bg-gray-600 bg-opacity-50" data-controller="turbo-modal">
-    <div class="w-screen h-screen grid grid-cols-2 justify-center items-center">
-      <div class="bg-white bg-opacity-100 border rounded-xl p-8">
-        <h1 class="font-bold text-4xl">アイコンアップロード</h1>
-        <%= render 'form', user: @user %>
-        <%= button_tag "キャンセル", data: { action: "turbo-modal#hideModal" }, type: "button" %>
+  <input type="checkbox" class="modal-toggle hidden" checked />
+  <div class="modal" data-controller="turbo-modal">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg">アイコンアップロード</h3>
+      <%= render 'form', user: @user %>
+      <div class="modal-action">
+        <%= button_tag "キャンセル", type: "button", data: { action: "turbo-modal#hideModal" }, class: "btn" %>
       </div>
     </div>
   </div>
