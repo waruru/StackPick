@@ -2,7 +2,7 @@
   <input type="checkbox" class="modal-toggle hidden" checked />
   <div class="modal" data-controller="turbo-modal">
     <div class="modal-box">
-      <h3 class="font-bold text-lg">アイコンアップロード</h3>
+      <h3 class="font-bold text-2xl">アイコンアップロード</h3>
       <%= render 'form', user: @user %>
       <div class="modal-action">
         <%= button_tag "キャンセル", type: "button", data: { action: "turbo-modal#hideModal" }, class: "btn" %>
