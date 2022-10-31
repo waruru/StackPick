@@ -1,26 +1,6 @@
 <h3 class="mt-4 text-2xl font-bold">投稿一覧</h3>
 
-<div class="mt-3 rounded-lg bg-white border border-gray-400 shadow-lg">
-  <div class="border-b border-gray-300 p-2">
-    <p class="font-bold">検索条件</p>
-  </div>
-
-  <div class="px-3">
-    <%= search_form_for @search, html: { data: { turbo_frame: "posts-list" } } do |f| %>
-      <div class="flex my-3">
-        <div class="grow flex items-center gap-2">
-          <%= f.label :title_cont, "タイトル", class: "flex-none" %>
-          <%= f.search_field :title_cont, class: "grow px-2 self-stretch rounded border border-gray-300 shadow shadow-inner" %>
-        </div>
-
-        <div class="flex-none flex gap-2 items-center ml-2">
-          <%= button_tag "検索", class: "px-3 py-1 rounded bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white" %>
-          <%= link_to "リセット", posts_path, class: "p-1 rounded ring ring-gray-300 hover:bg-gray-100 active:bg-gray-200" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render "search" %>
 
 <div class="mt-6">
   <%= turbo_frame_tag 'posts-list' do %>
@@ -33,7 +13,7 @@
       </div>
 
       <div class="flex justify-end">
-        <%= link_to "新規投稿", new_post_path, data: { turbo: false }, class: "px-3 py-1 rounded bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white" %>
+        <%= link_to "新規投稿", new_post_path, data: { turbo: false }, class: "btn-blue-sm" %>
       </div>
     </div>
 
