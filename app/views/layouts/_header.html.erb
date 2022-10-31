@@ -14,7 +14,7 @@
   <nav class="hidden lg:flex items-center gap-6">
     <%= link_to "投稿一覧", posts_path, class: "header-nav-item" %>
     <a href="#" class="header-nav-item">タイムライン</a>
-    <a href="#" class="header-nav-item">タグ</a>
+    <%= link_to "タグ", tags_path, class: "header-nav-item" %>
     <a href="#" class="header-nav-item">About</a>
     <div class="flex items-center gap-3">
       <% if user_signed_in? %>
