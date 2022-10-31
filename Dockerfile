@@ -1,7 +1,7 @@
 FROM ruby:3.0.4
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - &&\
-    apt install -y nodejs npm
+    apt-get install -y nodejs npm
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
