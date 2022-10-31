@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  resources :tags, only: [:index, :show]
+
   namespace :posts do
     resources :tags
   end
