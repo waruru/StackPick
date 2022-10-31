@@ -1,7 +1,7 @@
 ja:
   activerecord:
     models:
-      post: 投稿
+      post: 記事
       tag: タグ
     attributes:
       post:
