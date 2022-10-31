@@ -16,12 +16,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @tags = current_user.tags
+    @tags = Tag.all
   end
 
   # GET /posts/1/edit
   def edit
-    @tags = current_user.tags
+    @tags = Tag.all
   end
 
   # POST /posts or /posts.json
