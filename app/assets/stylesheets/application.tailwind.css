@@ -4,8 +4,8 @@
 
 @layer components {
   /* 全体共有 */
-  .btn-submit {
-    @apply px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white;
+  .btn-blue-sm {
+    @apply btn btn-sm bg-blue-500 hover:bg-blue-600 text-white border-0;
   }
 
   .form-text-field {
