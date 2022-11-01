@@ -13,10 +13,11 @@
 
   <div>
     <%= form.label :name, class: "block" %>
-    <%= form.text_field :name, class: "form-text-field" %>
+    <%= form.text_field :name, class: "appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500", placeholder: "Enter some tags" %>
   </div>
 
-  <div class="inline">
-    <%= form.submit class: "btn" %>
+  <div class="flex mt-1">
+    <%= form.submit class: "btn btn-sm" %>
+    <%= link_to 'キャンセル', new_post_path, class: "btn btn-link btn-sm text-neutral" %>
   </div>
 <% end %>
