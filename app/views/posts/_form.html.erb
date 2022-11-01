@@ -12,6 +12,8 @@
       <% end %>
     </div>
 
+    <%= turbo_frame_tag "tags" %>
+
     <%= turbo_frame_tag "new_tag" do %>
       <%= link_to "追加", new_posts_tag_path %>
     <% end %>
