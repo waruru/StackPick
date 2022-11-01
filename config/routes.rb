@@ -22,10 +22,6 @@ Rails.application.routes.draw do
 
   resources :tags
 
-  namespace :posts do
-    resources :tags
-  end
-
   get 'pages/terms_of_service'
   get 'pages/privacy_policy'
 end
