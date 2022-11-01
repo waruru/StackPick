@@ -1,4 +1,4 @@
-unless User.exists?
+unless User.exists?(email: "test@example.com")
   User.create(email: "test@example.com", password: "password")
   puts "User is created"
 end
