@@ -22,10 +22,14 @@ class TagsController < ApplicationController
 
   # POST /tags or /tags.json
   def create
-    @tag = Tag.new(tag_params)
+    tag = Tag.exists?(tag_params) ? Tag.find_by(tag_params) : Tag.new(tag_params)
 
-    if @tag.save
-      render turbo_stream: turbo_stream.append("tags", @tag)
+    if !tag.new_record? or tag.save
+      @tag = Tag.new
+      render turbo_stream: [
+        turbo_stream.append("tags", tag),
+        turbo_stream.replace("new_tag", template: "tags/new", locals: { tag: Tag.new })
+      ]
     else
       format.html { render :new, status: :unprocessable_entity }
     end
