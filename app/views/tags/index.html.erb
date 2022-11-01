@@ -1,2 +1,33 @@
-<h1 class="font-bold text-4xl">Tags#index</h1>
-<p>Find me in app/views/tags/index.html.erb</p>
+<h3 class="my-2 md:my-4 lg:my-8 font-bold text-4xl">タグ一覧</h3>
+<div class="bg-white border-x border-t">
+  <table class="table-auto w-full">
+    <thead class="border-b">
+      <tr class="bg-gray-100">
+        <th class="text-left p-4 font-medium">
+          ランク
+        </th>
+        <th class="text-left p-4 font-medium">
+          タグ名
+        </th>
+        <th class="text-left p-4 font-medium">
+          記事数
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tags.each_with_index do |tag, index| %>
+        <tr class="border-b hover:bg-gray-50">
+          <td class="p-4">
+            <%= index+1 %>
+          </td>
+          <td class="p-4">
+            <%= tag.name %>
+          </td>
+          <td class="p-4">
+            <%= tag.posts.length %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
