@@ -1,7 +1,5 @@
 <div id="<%= dom_id tag %>">
-  <% if action_name != "show" %>
-    <%= link_to "Show this tag", tag, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this tag', edit_tag_path(tag), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+  <%= link_to tag, class: "btn btn-xs" do %>
+    <%= tag.name %>
   <% end %>
 </div>
