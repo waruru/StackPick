@@ -12,7 +12,7 @@
       <% end %>
     </div>
 
-    <%= turbo_frame_tag "tags", class: "flex gap-3" %>
+    <%= render template: 'posts/tags/index' %>
 
     <%= turbo_frame_tag "new_tag" do %>
       <%= link_to "追加", new_tag_path %>
