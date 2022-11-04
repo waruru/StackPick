@@ -6,9 +6,6 @@
 
   <div>
     <p>タグ</p>
-
-    <%#= render template: 'posts/tags/index' %>
-
     <%= turbo_frame_tag "tags", class: "flex flex-wrap gap-2" do %>
       <% @tags.each do |tag| %>
         <%= render 'posts/tags/form_tag', tag: tag %>
