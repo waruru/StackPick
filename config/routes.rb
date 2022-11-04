@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes, only: [:create, :destroy]
     resources :tags, only: [:index]
+    get 'tags/remove/:id', to: 'posts/tags#remove', as: :remove_tag, on: :collection
   end
 
   resources :tags
