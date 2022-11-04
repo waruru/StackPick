@@ -16,12 +16,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @tags = Tag.all
+    @tags = @post.tags
   end
 
   # GET /posts/1/edit
   def edit
-    @tags = Tag.all
+    @tags = @post.tags
   end
 
   # POST /posts or /posts.json
@@ -86,6 +86,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description, :published, :url).merge(user_id: current_user.id)
+      params.require(:post).permit(:title, :description, :published, :url, tag_ids:[]).merge(user_id: current_user.id)
     end
 end
