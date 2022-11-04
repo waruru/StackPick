@@ -27,8 +27,8 @@ class TagsController < ApplicationController
     if !tag.new_record? or tag.save
       @tag = Tag.new
       render turbo_stream: [
-        turbo_stream.append("tags", tag),
-        turbo_stream.replace("new_tag", template: "tags/new", locals: { tag: Tag.new })
+        turbo_stream.append("tags", partial: "posts/tags/form_tag", locals: {tag: tag}),
+        turbo_stream.replace("new_tag", template: "tags/new", locals: { tag: @tag })
       ]
     else
       format.html { render :new, status: :unprocessable_entity }
