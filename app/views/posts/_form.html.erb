@@ -6,35 +6,20 @@
 
   <div>
     <p>タグ</p>
-    <div class="flex gap-2">
-      <% post.tags.each do |tag| %>
-        <%= render tag %>
-      <% end %>
-    </div>
 
-    <%= render template: 'posts/tags/index' %>
+    <%#= render template: 'posts/tags/index' %>
+
+    <%= turbo_frame_tag "tags", class: "flex flex-wrap gap-2" do %>
+      <% @tags.each do |tag| %>
+        <%= render 'posts/tags/form_tag', tag: tag %>
+      <% end %>
+    <% end %>
 
     <%= turbo_frame_tag "new_tag" do %>
       <%= link_to "追加", new_tag_path %>
     <% end %>
-
-<!--
-    <div class="inline-block">
-      <ul class="px-2 min-w-[10rem] bg-white border border-black">
-        <%#= form.collection_check_boxes(:tag_ids, @tags, :id, :name, include_hidden: false) do |tag| %>
-          <li>
-            <%= tag.check_box %>
-            <%= tag.label %>
-          </li>
-        <%# end %>
-      </ul>
-    </div>
-
-    <%#= form.fields_for :tags do |tag| %>
-      <%#= tag.label :name %>
-      <%#= tag.text_field :name %>
-    <%# end %> -->
   </div>
+
 
   <div>
     <%= form.label :url, class: "block" %>
@@ -43,7 +28,7 @@
 
   <div>
     <%= form.label :description, class: "block" %>
-    <%= form.text_area :description, class: "form-text-field" %>
+    <%= form.text_area :description, class: "form-text-field", rows: 10 %>
   </div>
 
   <div>
