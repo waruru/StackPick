@@ -1,10 +1,10 @@
 /* デバッグ用 */
-turbo-frame {
+.develop turbo-frame {
   border: 1px red solid;
   display: block;
 }
 
-turbo-frame::before {
+.develop turbo-frame::before {
   content: "Frame: #" attr(id);
   position: relative;
   top: -14px;
