@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @posts = Post.pub.order(updated_at: :desc).limit(20)
+    @tags = @post.tags
   end
 
   # GET /posts/new
@@ -27,12 +28,6 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    # tag_ids = params[:post][:tag_ids].map(&:to_i)
-    # tags = Tag.where(id: tag_ids)
-
-    # tags.each do |tag|
-    #   @post.tags << tag
-    # end
 
     respond_to do |format|
       if @post.save
@@ -50,13 +45,6 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    # tag_ids = params[:post][:tag_ids].map(&:to_i)
-    # tags = Tag.where(id: tag_ids)
-
-    # tags.each do |tag|
-    #   @post.tags << tag
-    # end
-
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
