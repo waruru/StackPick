@@ -3,13 +3,13 @@
   <table class="table-auto w-full">
     <thead class="border-b">
       <tr class="bg-gray-100">
-        <th class="text-left p-4 font-medium">
+        <th class="p-4 font-medium text-center">
           ランク
         </th>
         <th class="text-left p-4 font-medium">
           タグ名
         </th>
-        <th class="text-left p-4 font-medium">
+        <th class="p-4 font-medium text-center">
           記事数
         </th>
       </tr>
@@ -17,13 +17,13 @@
     <tbody>
       <% @tags.each_with_index do |tag, index| %>
         <tr class="border-b hover:bg-gray-50">
-          <td class="p-4">
+          <td class="p-4 text-center">
             <%= index+1 %>
           </td>
           <td class="p-4">
             <%= tag.name %>
           </td>
-          <td class="p-4">
+          <td class="p-4 text-center">
             <%= tag.posts.length %>
           </td>
         </tr>
