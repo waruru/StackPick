@@ -3,8 +3,8 @@ class TagsController < ApplicationController
 
   # GET /tags or /tags.json
   def index
-    @tags = Tag.joins(:posts).all
-    @tags = @tags.sort{|a, b| b.posts.length <=> a.posts.length }
+    @tags = Tag.joins(:posts).group(:name).count
+    @tags = @tags.sort{|a, b| b.last <=> a.last}
   end
 
   # GET /tags/1 or /tags/1.json
