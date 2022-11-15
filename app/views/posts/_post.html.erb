@@ -1,12 +1,12 @@
-<div id="<%= dom_id post %>" class="rounded-xl overflow-hidden border border-gray-400 shadow-lg h-40">
+<div id="<%= dom_id post %>" class="rounded-xl overflow-hidden border border-gray-400 shadow-lg">
   <%= link_to post, data: { turbo: false } do %>
-    <div class="px-2 py-1 bg-green-500 border-b border-gray-300">
+    <div class="px-2 py-1 bg-green-500">
       <p><%= post.title %></p>
     </div>
 
-    <div class="flex items-center bg-white">
+    <div class="flex justify-center bg-white">
       <% if post.ogp_url.present? %>
-        <%= image_tag post.ogp_url, class: "max-h-40 mx-auto" %>
+        <%= image_tag post.ogp_url, class: "max-h-40" %>
       <% end %>
     </div>
   <% end %>
