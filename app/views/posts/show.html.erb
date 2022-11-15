@@ -11,7 +11,9 @@
     </div>
 
     <div class="mt-2 bg-slate-400">
-      <%= image_tag @post.ogp_url, class:"mx-auto" %>
+      <%= link_to @post.url, target: "_blank" do %>
+        <%= image_tag @post.ogp_url, class:"mx-auto" %>
+      <% end %>
     </div>
 
     <div class="mt-2 lg:mt-4">
