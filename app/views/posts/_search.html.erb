@@ -7,7 +7,7 @@
     <%= search_form_for @search, html: { data: { turbo_frame: "posts-list" } } do |f| %>
       <div class="flex my-3">
         <div class="grow flex items-center gap-2">
-          <%= f.label :title_cont, "タイトル", class: "flex-none" %>
+          <%= f.label :title_cont, "タイトル", class: "flex-none hidden sm:block" %>
           <%= f.search_field :title_cont, class: "grow px-2 self-stretch rounded border border-gray-300 shadow shadow-inner" %>
         </div>
 
