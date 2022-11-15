@@ -1,13 +1,13 @@
 ja:
   activerecord:
     models:
-      post: 記事
+      post: 投稿
       tag: タグ
     attributes:
       post:
         title: タイトル
         description: 説明
-        url: URL
+        url: 記事のURL
         created_at: 投稿日
         updated_at: 最終更新日
       tag:
