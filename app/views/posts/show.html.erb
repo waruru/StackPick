@@ -22,8 +22,8 @@
     </div>
   </div>
 
-  <div class="invisible lg:visible col-span-1 px-6 border-l-2 border-gray-300">
-    <div class="flex flex-col overflow-y-auto h-screen gap-4">
+  <div class="invisible lg:visible col-span-1 px-6 border-l-2 border-gray-300 h-full overflow-y-scroll">
+    <div class="flex flex-col gap-4 py-4">
       <% @posts.each do |post| %>
         <%= render post %>
       <% end %>
