@@ -4,15 +4,15 @@
 
 <div class="mt-6">
   <%= turbo_frame_tag 'posts-list' do %>
-    <div class="grid grid-cols-2 mt-4">
-      <div class="mt-auto flex gap-3">
+    <div class="flex mt-4">
+      <div class="grow flex gap-2 items-center">
         <p class="font-bold">並び順</p>
         <%= sort_link @search, :title, class: "underline" %>
         <%= sort_link @search, :created_at, class: "underline" %>
         <%= sort_link @search, :updated_at, class: "underline" %>
       </div>
 
-      <div class="flex justify-end">
+      <div class="flex-none">
         <%= link_to "新規投稿", new_post_path, data: { turbo: false }, class: "btn-blue-sm" %>
       </div>
     </div>
