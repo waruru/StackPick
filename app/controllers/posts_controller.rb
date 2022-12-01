@@ -4,13 +4,13 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @search = Post.includes(:likes).pub.ransack(params[:q])
+    @search = Post.includes(:likes).pub.order_desc.ransack(params[:q])
     @posts = @search.result.page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
   def show
-    @posts = Post.pub.order(updated_at: :desc).limit(20)
+    @posts = Post.pub.order_desc.limit(20)
     @tags = @post.tags
   end
 

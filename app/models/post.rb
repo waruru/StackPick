@@ -8,6 +8,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
+
+  scope :order_desc, -> { order(created_at: :desc) }
   scope :pub, -> { where(published: true) }
   scope :pte, -> { where(published: false) }
 
